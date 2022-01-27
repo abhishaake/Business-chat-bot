@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+            
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="JAYPEE SPACE RESEARCH ORGANISATION, &quot;​Our vision is to harness space technology for national development,&nbsp; while​ pursuing space science research and planetary expl​oration.&quot;, Courses Offered:">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename='Home.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='nicepage.js') }}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.0.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body" style="overflow:hidden;">
+    <section class="u-clearfix u-section-1" id="sec-7514">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-body-alt-color u-text-1">Government Of India<br>Department of Space, Jaypee Space Research Organisation<br>
+        </h3>
+        <a href="Store.html" class="u-border-none u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-30 u-radius-50 u-btn-1">
+          <span style="font-size: 16px;">Store</span>
+          <br>
+        </a>
+        <a href="Main.html" class="u-border-none u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-30 u-radius-50 u-btn-2">
+          <span style="font-size: 1rem;">Home</span>
+          <br>
+        </a>
+        <a href="Contact-Us.html" class="u-border-none u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-30 u-radius-50 u-btn-3">
+          <span style="font-size: 16px;">Contact</span>
+          <br>
+        </a>
+        <a href="Register.html" class="u-border-none u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-30 u-radius-50 u-btn-4">
+          <span style="font-size: 1rem;">Register</span>
+          <br>
+        </a>
+        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="{{url_for('static', filename='Screenshot2021-11-26132224.jpg')}}" alt="" data-image-width="230" data-image-height="166">
+        <h1 class="u-text u-text-body-alt-color u-title u-text-2">JAYPEE SPACE RESEARCH ORGANISATION</h1>
+        <h1 class="u-align-center u-text u-text-body-alt-color u-text-3">"​Our vision is to harness space technology for national development,&nbsp; while​ pursuing space science research and planetary expl​oration."</h1>
+        <h4 class="u-align-center u-text u-text-body-alt-color u-text-5">Chat With Us!</h4>
+        
+        <div class="u-radius-10 u-shape u-shape-round u-white u-shape-1">
+          <div id= "chatbox">
+            <p class="botText" style="font-size: medium;"><span style="font-weight: bold;">Lucy:</span> Hi !!</p>
+            <p ><span style="text-align: center; font-weight: bold; color: blue;"><button ><a href="Register.html">Register for free</a></button></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="text-align: center; font-weight: bold; color: blue;"><button><a href="Store.html">Check Prices</a></button></span></p>
+            <p ><span style="text-align: center; font-weight: bold; color: blue;"><button><a href="Contact-Us.html">Contact Us</a></button></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="text-align: center; font-weight: bold; color: blue;"><button><a href="Main.html">Home Page</a></button></span></p>
+          </div>
+        </div>
+
+        <div class="u-inb" id="userInput">
+          <input id="textInput" class= "u-radius-6 u-shape-round" style="width: 532px;" type="text" name="msg" placeholder="Ask me anything">
+          <input id="buttonInput" class= "u-radius-6 u-shape-round" type="submit" value="Send">
+
+        </div>
+
+        <script>
+          function getBotresponse(){
+              var rawText = $("#textInput").val();
+              var userHtml = '<p class="userText" style="font-size: medium; text-align: right;"><span style="font-weight: bold; color: red;">' + 'You: '+ '</span>' + rawText + '</p>'
+              $("#textInput").val("");
+              $("#chatbox").append(userHtml);
+              $.get("/get",{msg: rawText}).done(function(data){
+                  var botHtml = '<p class="botText" style="font-size: medium;">' + '<span style="font-weight: bold;">' +'Lucy: '+ '</span>' + data + '</p>';
+                  $("#chatbox").append(botHtml);
+              });
+
+          }
+          $("#textInput").keypress(function(e){
+              if(e.which == 13){
+                  getBotresponse();
+              }
+
+          });
+
+          $("#buttonInput").click(function(){
+              getBotresponse();
+          });
+
+        </script>
+
+
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-187d">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    
+
+  </body>
+</html>
